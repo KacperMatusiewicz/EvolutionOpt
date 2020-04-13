@@ -23,7 +23,13 @@ public class Population<I> {
     }
 
     private void init() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(config.getInitialIndividuals()!= null){
+            config.getInitialIndividuals().forEach(individual -> population.put(service.fitnessFunction(individual), individual));
+        }
+        for(int i=population.size(); i<config.getPopulationSize(); i++){
+            I individual = service.createRandom();
+            //population.put(service.fitnessFunction(a), value)
+        }
     }
     
 }
