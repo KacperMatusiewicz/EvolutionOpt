@@ -5,7 +5,7 @@ import java.util.TreeMap;
 public class Population<I> {
     
     private final IndividualService<I> service;
-    private final Configuration config;
+    private final Configuration<I> config;
     private TreeMap<Double, I> population = new TreeMap();
 
     
